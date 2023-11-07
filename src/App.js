@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Homepage } from "./Navigation";
+import { UsestateTernary } from "./TernarywithUseState";
+import { Registrationform } from "./RegisterForm";
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { Hook1 } from "./usingUseState";
+import { Listingpage, listingpage } from "./Listingpage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+         <Homepage/>
+         <Routes>
+            <Route path="list1" exact element={<Listingpage/>}></Route>
+         </Routes>
+
+      </BrowserRouter>
+      {/* <UsestateTernary/> */}
+    </>
   );
 }
 
